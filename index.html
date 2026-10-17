@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JURNALISTIK SMA Cinta Budaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff014f',
+                        secondary: '#6d28d9',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -10;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co.com/tT2rjHMQ/phydc-sunflower-8152089-1920.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            width: 100%;
+            height: auto;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+        .slider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .item {
+            min-width: 100%;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            object-fit: contain;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 15px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .dot.active {
+            background: #ff014f;
+            transform: scale(1.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <div>
+        <div class="fixed-bg"></div>
+
+        <header class="sticky top-0 z-50 bg-amber-400/95 backdrop-blur-md border-b border-amber-300/50 shadow-sm">
+            <div class="max-w-7xl mx-auto px-2 h-16 flex items-center justify-between space-x-2">
+                
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-md bg-white flex items-center justify-center shrink-0">
+                    <img src="https://i.ibb.co.com/twYMrVfH/IMG-20260825-WA0007.jpg" alt="JURNALISTIK SMA CINBUD" class="w-full h-full object-cover">
+                </div>
+
+                <div class="text-center flex-1 px-1">
+                    <span class="font-extrabold text-red-600 tracking-tight text-[18px] sm:text-sm block">JURNALISTIK SMA CINBUD/崇文</span>
+                </div>
+
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-md bg-white flex items-center justify-center border border-amber-200 shrink-0">
+                    <img src="https://i.ibb.co.com/MxqYJFqW/5-ET6qh-Jr-Duye-logo-1.png.jpg" alt="CINTA BUDAYA" class="w-full h-full object-cover">
+                </div>
+
+            </div>
+        </header>
+
+        <section id="home" class="max-w-4xl mx-auto px-5 py-6 text-center">
+            <div class="space-y-3 animate-fade-in">
+                <h1 class="text-3xl sm:text-5xl font-extrabold leading-[1.1]">
+                    <span class="text-white drop-shadow-lg">JURNALISTIK SMA CINTA BUDAYA</span>
+                </h1>
+                <p class="text-base text-yellow-100 max-w-xl mx-auto font-medium drop-shadow">mencari dan memberi informasi dengan pasti untuk memberi inspirasi 🔥💪</p>
+                <div>
+                    <a href="https://www.instagram.com/jurnalistiksma_cb" target="_blank" class="inline-flex items-center space-x-2 text-base text-pink-100 font-medium drop-shadow hover:text-white transition">
+                        <i class="fa-brands fa-instagram text-lg text-pink-300"></i>
+                        <span>follow : jurnalistiksma_cb</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <main id="main-menu" class="max-w-xl mx-auto px-4 mb-16 space-y-4 animate-fade-in">
+            
+            <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" id="search-input" onkeyup="handleSearch(event)" placeholder="Cari event (ketik lalu Enter)..." class="w-full pl-11 pr-4 py-3.5 bg-white/90 backdrop-blur-md rounded-2xl shadow-md text-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 transition">
+            </div>
+
+            <div id="event-list" class="space-y-4">
+                
+                <!-- Event Sport Day -->
+                <div id="card-sportday" data-key="sportday" data-title="sport day" onclick="openGallery('sportday')" class="group cursor-pointer bg-white/95 hover:bg-white rounded-3xl p-6 text-gray-900 shadow-xl transform transition hover:scale-[1.02] active:scale-95 flex items-center justify-between border border-white/50">
+                    <div class="space-y-1">
+                        <span class="bg-red-100 text-red-600 text-xs px-2.5 py-1 rounded-full font-semibold uppercase tracking-wider">Kategori Event</span>
+                        <h3 class="text-xl font-bold">Sport Day 2026</h3>
+                        <p class="text-xs text-gray-600">Klik untuk melihat dokumentasi keseruan lomba olahraga.</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center group-hover:bg-red-600 transition shrink-0 ml-4 shadow-md">
+                        <i class="fa-solid fa-arrow-right text-lg"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="no-result" class="hidden text-center py-8 text-white font-medium bg-black/20 backdrop-blur-sm rounded-2xl">
+                <i class="fa-regular fa-face-frown text-2xl mb-1"></i>
+                <p>Event yang kamu cari tidak ada.</p>
+            </div>
+
+        </main>
+
+
+        <section id="gallery-view" class="hidden max-w-xl mx-auto px-4 mb-16 animate-fade-in">
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl p-6 shadow-xl border border-white/50 space-y-8">
+                
+                <button onclick="closeGallery()" class="inline-flex items-center space-x-2 text-gray-700 bg-gray-200/80 hover:bg-gray-300 px-4 py-2 rounded-xl text-sm font-semibold transition active:scale-95">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Kembali ke Menu</span>
+                </button>
+
+                <div class="text-center">
+                    <h2 id="gallery-title" class="text-2xl font-black mb-6 text-gray-900">Judul Event</h2>
+                    
+                    <!-- Tempat Konten Slider & Caption Dinamis -->
+                    <div id="gallery-sections-container" class="space-y-8"></div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-200">
+                    <h3 class="text-lg font-extrabold text-red-600 mb-3 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-youtube text-xl"></i> CLOSING SPORT DAY 2026
+                    </h3>
+                    
+                    <a id="youtube-link" href="#" target="_blank" class="group flex items-center justify-between bg-red-600 hover:bg-red-700 text-white p-4 rounded-2xl shadow-lg transition transform active:scale-95">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-youtube text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-red-200 block font-semibold">Tonton Live</span>
+                                <span id="youtube-btn-text" class="text-base font-bold">Video Event</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-lg text-red-200 group-hover:text-white transition"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-amber-400/95 backdrop-blur-md border-t border-amber-300/50 py-3 px-4 text-center text-xs text-gray-900 font-medium">
+        <p> © 2026 Jurnalistik SMA Cinta Budaya All Rights Reserved.</p>
+        <p class="mt-0.5">Developed By Arventino Jansen</p>
+    </footer>
+
+    <script>
+        const galleryData = {
+            sportday: {
+                title: "Sport Day 2026",
+                youtubeUrl: "https://www.youtube.com/embed/YskBIteoy3k?si=jfslJp4MkZInNw_b",
+                youtubeTitle: "LIVE CLOSING CEREMONY SPORTS DAY 2026",
+                sections: [
+                    {
+                        subtitle: "Boxing",
+                        description: "Boxing adalah cabor sportday yang baru. Boxing adalah olahraga bela diri menggunakan pukulan sebagai teknik utama. Pemain boxing harus memiliki kekuatan, kecepatan, kelincahan, fokus, dan stamina untuk mengalahkan lawan. Melalui boxing kita dapat meningkatkan kebugaran fisik serta melatih kekuatan, kelincahan, dan konsentrasi.",
+                        images: [
+                            'https://i.ibb.co.com/JFdqvp4y/IMG-20261002-152329.jpg',
+                            'https://i.ibb.co.com/s9GW13fD/IMG-20261002-152354.jpg'                         
+                        ]
+                    },
+                    {
+                        subtitle: "Basket",
+                        description: "Basket adalah salah satu lomba yang diadakan pada Sports Day tahun 2026. Olahraga yang satu ini pastinya sudah tidak asing lagi dan punya banyak peminat di kalangan pelajar. Dengan permainan yang cepat, penuh strategi, dan pastinya banyak momen menegangkan, basket selalu punya daya tarik tersendiri. Mulai dari dribble, passing, shooting, sampai aksi merebut bola, semuanya membutuhkan skill, fokus, dan kerja sama antar tim yang kuat. Bukan cuma pemainnya yang dituntut untuk aktif, penonton juga sering ikut terbawa suasana saat melihat tim pilihan mereka mencetak poin atau mengejar ketertinggalan. Selain seru dimainkan dan ditonton, basket juga mengajarkan kita tentang kekompakan, komunikasi, sportivitas, dan pantang menyerah. ~Jangan hanya bermain untuk menang, bermainlah untuk berkembang, berjuang, dan membuktikan bahwa kerja keras tidak pernah sia-sia. ",
+                        images: [
+                            'https://i.ibb.co.com/4ZZQz9Sq/IMG-20261002-145023.jpg',
+                            'https://i.ibb.co.com/SkNzPNN/IMG-20261002-145239.jpg',
+                            'https://i.ibb.co.com/Y7qSCSBT/IMG-20261002-145343.jpg'
+                        ]
+                    },
+                    {
+                        subtitle: "E-SPORT",
+                        description: "One Team. One Strategy. One Goal: VICTORY. E-SPORT SPORT DAY. Tujuan E-Sport: Melatih strategi, kerja sama, konsentrasi, komunikasi, dan sportivitas melalui kompetisi permainan digital. E-Sport bukan sekadar bermain game, tetapi menjadi wadah untuk mengembangkan strategi, kerja sama tim, komunikasi, konsentrasi, dan sportivitas. Melalui kompetisi dapat membangun kekompakan, dan melatih ketangguhan dalam menghadapi tantangan. Di balik layar sebuah pertandingan, ada tim yang terus berlatih dan berusaha menjadi lebih baik. Setiap role memiliki tugas, setiap pemain memiliki tanggung jawab. Kami mungkin bukan tim yang selalu menang, tetapi kami adalah tim yang tidak mudah menyerah.",
+                        images: [
+                            'https://i.ibb.co.com/ZzbVbf7P/IMG-20261002-153018.jpg',
+                            'https://i.ibb.co.com/d1vrNcm/IMG-20261002-153116.jpg', 
+                            'https://i.ibb.co.com/7JwbnPhw/IMG-20261002-153135.jpg'
+                        ]
+                    }
+                ]
+            }
+        };
+
+        let currentIntervals = [];
+
+        function handleSearch(event) {
+            let input = document.getElementById('search-input').value.toLowerCase().trim();
+            let eventList = document.getElementById('event-list');
+            let items = eventList.children;
+            let noResult = document.getElementById('no-result');
+            let foundCount = 0;
+            let firstMatchedKey = null;
+
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i];
+                if (item.hasAttribute('data-title')) {
+                    let title = item.getAttribute('data-title').toLowerCase();
+                    if (title.startsWith(input) && input !== "") {
+                        item.style.display = "flex";
+                        foundCount++;
+                        if (!firstMatchedKey) {
+                            firstMatchedKey = item.getAttribute('data-key');
+                        }
+                    } else if (input === "") {
+                        item.style.display = "flex";
+                    } else {
+                        item.style.display = "none";
+                    }
+                }
+            }
+
+            if (input === "") {
+                noResult.classList.add('hidden');
+                return;
+            }
+
+            if (foundCount === 0) {
+                noResult.classList.remove('hidden');
+            } else {
+                noResult.classList.add('hidden');
+                if (event.key === 'Enter' && firstMatchedKey) {
+                    openGallery(firstMatchedKey);
+                }
+            }
+        }
+
+        function setupSlider(wrapperId, dotsId, imageList) {
+            const wrapper = document.getElementById(wrapperId);
+            const dotsContainer = document.getElementById(dotsId);
+            
+            wrapper.innerHTML = '';
+            dotsContainer.innerHTML = '';
+
+            if (!imageList || imageList.length === 0) return;
+
+            imageList.forEach((url, index) => {
+                const item = document.createElement('div');
+                item.className = 'item';
+                item.innerHTML = `<img src="${url}" alt="Slider Image">`;
+                wrapper.appendChild(item);
+
+                const dot = document.createElement('div');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.dot');
+            let currentIndex = 0;
+
+            const interval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % imageList.length;
+                wrapper.scrollTo({
+                    left: currentIndex * wrapper.clientWidth,
+                    behavior: 'smooth'
+                });
+            }, 3000);
+
+            currentIntervals.push(interval);
+
+            wrapper.onscroll = () => {
+                const index = Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            };
+        }
+
+        function openGallery(category) {
+            const data = galleryData[category];
+            if (!data) return;
+
+            document.getElementById('main-menu').classList.add('hidden');
+            document.getElementById('gallery-view').classList.remove('hidden');
+            document.getElementById('gallery-title').innerText = data.title;
+
+            const ytButton = document.getElementById('youtube-link');
+            const ytText = document.getElementById('youtube-btn-text');
+            ytButton.href = data.youtubeUrl;
+            ytText.innerText = data.youtubeTitle;
+
+            currentIntervals.forEach(interval => clearInterval(interval));
+            currentIntervals = [];
+
+            const container = document.getElementById('gallery-sections-container');
+            container.innerHTML = '';
+
+            data.sections.forEach((sec, idx) => {
+                const sliderId = `slider-${idx}`;
+                const dotsId = `dots-${idx}`;
+
+                const sectionHTML = `
+                    <div class="mb-8 pb-8 ${idx < data.sections.length - 1 ? 'border-b border-gray-200' : ''}">
+                        <div class="slider-wrapper">
+                            <div class="slider" id="${sliderId}"></div>
+                        </div>
+                        <div class="dots-container" id="${dotsId}"></div>
+
+                        <div class="mt-5 text-center max-w-md mx-auto space-y-2">
+                            <h3 class="text-lg font-bold text-gray-900">${sec.subtitle}</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                ${sec.description}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += sectionHTML;
+            });
+
+            data.sections.forEach((sec, idx) => {
+                setupSlider(`slider-${idx}`, `dots-${idx}`, sec.images);
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeGallery() {
+            currentIntervals.forEach(interval => clearInterval(interval));
+            currentIntervals = [];
+            document.getElementById('gallery-view').classList.add('hidden');
+            document.getElementById('main-menu').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
